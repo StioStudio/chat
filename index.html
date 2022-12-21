@@ -289,13 +289,6 @@
         ScaffoldingAddons.run(scaffolding, {"gamepad":false,"pointerlock":false,"specialCloudBehaviors":false,"unsafeCloudBehaviors":false,"pause":false});
       }
 
-      scaffolding.setExtensionSecurityManager({
-        getSandboxMode: 'unsandboxed',
-        canLoadExtensionFromProject: (url) => {
-          handleError(new Error('Missing custom extension: ' + url));
-          return Promise.resolve(false);
-        }
-      });
       for (const extension of []) {
         vm.extensionManager.loadExtensionURL(extension);
       }
